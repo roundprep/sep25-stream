@@ -6,9 +6,14 @@ public class Main {
     public static void main(String[] args) {
         LibManagerService manager = new LibManagerService();
 
-        System.out.println(manager.getBookByTitle("Learning Java"));
+//        System.out.println(manager.getBookByTitle("Learning Java"));
+//
+//        System.out.println("manager.getBookTitles() = " + manager.getBookTitles());
+//
+//        System.out.println("manager.getTitleCSV = " + manager.getTitleCSV());
+//
+//        System.out.println("manager.getTitleByCSV = " + manager.getTitleByCSV());
 
-        System.out.println("manager.getBookTitles() = " + manager.getBookTitles());
-
+        System.out.println("prices" +manager.getTitlePriceCSV());
     }
 }
