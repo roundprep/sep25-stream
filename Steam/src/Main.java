@@ -9,6 +9,10 @@ public class Main {
         System.out.println(manager.getBookByTitle("Learning Java"));
 
         System.out.println("manager.getBookTitles() = " + manager.getBookTitles());
+        System.out.println("manager.getTitleCSV() = " + manager.getTitlesCSV());
+        System.out.println("manager.getTitlePriceMap() = " + manager.getTitleProceMap());
+
+
 
     }
 }
