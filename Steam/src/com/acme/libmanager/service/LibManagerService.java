@@ -3,10 +3,7 @@ package com.acme.libmanager.service;
 import com.acme.libmanager.model.Author;
 import com.acme.libmanager.model.Book;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class LibManagerService {
@@ -25,9 +22,31 @@ public class LibManagerService {
         return bookList.stream().filter(b -> b.getTitle().equalsIgnoreCase(title.trim())).findFirst();
     }
 
-    public List<String> getBookTitles() {
-        return bookList.stream().map(Book::getTitle).collect(Collectors.toList());
+    public String getBookTitles() {
+        return bookList.stream().map(Book::getTitle).collect(Collectors.joining(","));
     }
+   public Map<String, Double> getBookTitlesWithPrice() {
+        return bookList.stream().collect(Collectors.toMap(Book::getTitle, Book::getPrice));
+    }
+
+
+    public Map<String, Double> getBookTitlesWithPriceWithoutMap() {
+        Map<String, Double> map = new HashMap<>();
+        Iterator<Book> iterator = bookList.listIterator();
+
+        while (iterator.hasNext()){
+            Book b = iterator.next();
+            map.put(b.getTitle(), b.getPrice());
+
+        }
+        return map;
+
+
+    }
+
+
+
+
 
     public void init() {
        bookList.add( new Book("Learning Java",new Author("Chetan","chetain@gmail.com"),

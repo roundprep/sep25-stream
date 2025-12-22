@@ -10,5 +10,9 @@ public class Main {
 
         System.out.println("manager.getBookTitles() = " + manager.getBookTitles());
 
+        System.out.println("manager.getBookTitlesWithPrice() = " + manager.getBookTitlesWithPrice());
+        System.out.println("manager.getBookTitlesWithPriceWithoutMap() = " + manager.getBookTitlesWithPriceWithoutMap());
+
+        
     }
 }
