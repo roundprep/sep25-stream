@@ -50,15 +50,12 @@ public class Book {
         this.price = price;
     }
 
-    @Override
-    public String toString() {
-        return "Book{" +
-                "title='" + title + '\'' +
-                ", author=" + author +
-                ", category='" + category + '\'' +
-                ", price=" + price +
-                ", tags=" + tags +
-                '}';
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
     }
 
     @Override
@@ -73,11 +70,14 @@ public class Book {
         return Objects.hash(title, author, category, price, tags);
     }
 
-    public List<String> getTags() {
-        return tags;
-    }
-
-    public void setTags(List<String> tags) {
-        this.tags = tags;
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", author=" + author +
+                ", category='" + category + '\'' +
+                ", price=" + price +
+                ", tags=" + tags +
+                '}';
     }
 }
